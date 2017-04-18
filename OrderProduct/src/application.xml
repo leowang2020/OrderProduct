@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:c="http://www.springframework.org/schema/c"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+ 		default-init-method="originalInventoryList"
+        default-destroy-method="destoryInventoryList">
+		<!-- add your bean definitions here! -->
+		<context:annotation-config></context:annotation-config>
+		<context:component-scan base-package="npu.services"></context:component-scan>
+		<context:property-placeholder location= "classpath:*.properties"/>
+
+<!--	
+	<bean id="acctServiceIntlRules" class="npu.services.AccountingServiceIntlRules" >
+		<property name="taxService" ref="taxService"/>
+	</bean>
+	
+	<bean id="acctServiceFASBRules" class="npu.services.AccountingServiceFASBRules" >
+		<property name="taxService" ref="taxService"/>
+	</bean>
+	<bean id="inventoryService" class="npu.services.InventoryServiceImpl"/>
+	<bean id="orderProc" class="npu.services.OrderProcessor">
+		
+		<property name="acctService" ref="acctServiceFASBRules"/>
+		
+		<property name="inventoryService" ref="inventoryService"/>
+	</bean>
+	
+	<bean id="taxService" class="npu.services.TaxServiceImpl">
+		<property name="maps">
+			<map>
+				<entry key="CA" value="0.095" />
+				<entry key="CT" value="0.06" />
+				<entry key="FL" value="0.065" />
+				<entry key="MA" value="0.06" />
+				<entry key="NY" value="0.0825" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="inventoryServiceImpl" class="npu.services.InventoryServiceImpl" />
+-->	
+	
+</beans>
+
